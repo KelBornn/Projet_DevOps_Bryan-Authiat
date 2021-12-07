@@ -35,10 +35,12 @@ docker-compose up -d
 ### How to use it
 
 To use this pipeline you need to connect to your [Jenkins](Localhost:8081) and find the job sb3t in CI folder.  
+
 ![Job](https://i.imgur.com/esvQ1OS.png)
 
 
 Then launch it with your parameters and wait until the build is finished...  
+
 ![Job](https://i.imgur.com/9p5KtP5.png)
 
 The Build is a success when you have a `sb3t-$versionNum-$versionType.jar` file in the workspace of your build

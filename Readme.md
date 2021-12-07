@@ -14,8 +14,8 @@ This project is composed with tree applications, all will be deploy with jenkins
 
 The purpose of this project is tree applications all will be deploy with jenkins pipeline :
 * [Jenkins](jenkins/) : Build an java application with maven and parameters
-* [Terraform](terraform/) : Small aws infrastructure with parameters 
-* [Ansible](ansible/) : Ansible server with one playbook that deploy java application with parameters 
+* [Terraform](terraform/) : Small aws infrastructure with parameters
+* [Ansible](ansible/) : Ansible server with one playbook that deploy java application with parameters
 
 ## Getting Started
 
