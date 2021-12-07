@@ -5,10 +5,10 @@ Build jar from an java application named SB3T
 ## Table of Contents
 1. [Description](#Description)
 2. [Dependencies](#Dependencies)
-3. [Installing](#Dependencies)
+3. [Installing](#Installing)
 4. [How to use it](#How-to-use-it)
 5. [Author](#Author)
-5. [Version-History](#Author)
+5. [Version-History](#Version-History)
 
 ## Description
 
