@@ -7,3 +7,4 @@ terraform/.terraform.tfstate.lock.info
 terraform/terraform.tfstate.backup
 terraform/terraform-files/credential
 terraform/terraform-files/ssh
+terraform/terraform-files/terraform.tfstate
