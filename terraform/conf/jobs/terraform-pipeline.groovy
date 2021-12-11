@@ -10,7 +10,8 @@ pipeline {
         stage('git clone') {
             steps {
                 git branch: "${params.BRANCH}",
-                    url: 'https://github.com/KelBornn/terraform-project.git'
+                    credentialsId: 'jenkins',
+                    url: 'git@github.com:KelBornn/terraform-project.git'
             }
         }
     }

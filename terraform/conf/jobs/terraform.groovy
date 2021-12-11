@@ -1,8 +1,8 @@
 #!groovy
-println('------------------------------------------------------------------Import Job CI/SB3T')
-def pipelineScript = new File('/var/jenkins_config/jobs/sb3t-pipeline.groovy').getText("UTF-8")
+println('------------------------------------------------------------------Import Job IaC/terraform')
+def pipelineScript = new File('/var/jenkins_config/jobs/terraform-pipeline.groovy').getText("UTF-8")
 
-pipelineJob('CI/sb3t') {
+pipelineJob('IaC/terraform') {
     description("Build .jar from sb3t java application")
     parameters {
         stringParam {

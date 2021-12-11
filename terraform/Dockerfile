@@ -27,7 +27,10 @@ RUN apt-get update && \
       $(lsb_release -cs) \
       stable" && \
    apt-get update && \
-   apt-get -y install docker-ce
+   apt-get -y install docker-ce \
+   curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
+   sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" \
+   sudo apt-get update && sudo apt-get install terraform
 
 # Load plugins w jenkins-plugin-cli
 COPY --chown=jenkins:jenkins conf/plugins.txt /usr/share/jenkins/ref/plugins.txt
