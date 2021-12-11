@@ -85,7 +85,11 @@ Press enter until is done
 
 >  `-f ./ssh/id_rsa` is the path you want for your keys.
 
-  
+Don't forget to write your public key in *add-ssh-web-app.yaml*
+```yml
+    ssh_authorized_keys: 
+      - YOUR SSH KEY PUBLIC HERE
+```
 
 The result is :
 
