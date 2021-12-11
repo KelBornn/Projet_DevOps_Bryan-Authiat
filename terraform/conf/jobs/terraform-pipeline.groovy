@@ -7,11 +7,19 @@ pipeline {
         ansiColor('xterm')
     }
     stages {
-        stage('git clone') {
+        stage('mv terraform folder') {
             steps {
-                git branch: "${params.BRANCH}",
-                    credentialsId: 'jenkins',
-                    url: 'git@github.com:KelBornn/terraform-project.git'
+                sh 'cp -r /terraform-files/* .'
+            }
+        }
+        stage('terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('terraform apply') {
+            steps {
+                sh 'terraform apply -auto-approve'
             }
         }
     }

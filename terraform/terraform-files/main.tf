@@ -56,6 +56,14 @@ resource "aws_security_group" "sg_default" {
     to_port   = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  ingress {
+    from_port = 8080
+    protocol  = "tcp"
+    to_port   = 8080
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 }
 
 output "instance_id" {
@@ -66,4 +74,8 @@ output "instance_id" {
 output "instance_public_ip" {
   description = "Public IP address of the EC2 instance"
   value       = aws_instance.app_server.*.public_ip
+}
+
+output userdata {
+  value = "\n${data.template_file.user_data.rendered}"
 }

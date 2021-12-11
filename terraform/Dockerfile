@@ -15,6 +15,9 @@ ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false -Dpermissive-script-securit
 #ENV JENKINS_PASS ThisIs@StrongP@ssword
 
 USER root
+
+RUN mkdir /terraform-files/
+
 RUN apt-get update && \
     apt-get -y install apt-transport-https \
       ca-certificates \
@@ -27,10 +30,10 @@ RUN apt-get update && \
       $(lsb_release -cs) \
       stable" && \
    apt-get update && \
-   apt-get -y install docker-ce \
-   curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
-   sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" \
-   sudo apt-get update && sudo apt-get install terraform
+   apt-get -y install docker-ce
+
+RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - && apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && apt-get update && apt-get install terraform
+
 
 # Load plugins w jenkins-plugin-cli
 COPY --chown=jenkins:jenkins conf/plugins.txt /usr/share/jenkins/ref/plugins.txt
