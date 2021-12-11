@@ -1,0 +1,7 @@
+terraform/credential
+terraform/.terraform
+terraform/.terraform.lock.hcl
+terraform/ssh/
+terraform/terraform.tfstate
+terraform/.terraform.tfstate.lock.info
+terraform/terraform.tfstate.backup
