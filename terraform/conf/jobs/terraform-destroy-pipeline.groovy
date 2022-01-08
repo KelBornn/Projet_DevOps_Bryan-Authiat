@@ -9,12 +9,7 @@ pipeline {
     stages {
         stage('go to instance workspace folder') {
             steps {
-                sh 'cd /var/jenkins_home/workspace/IaC/terraform'
-            }
-        }
-        stage('mv terraform destroy') {
-            steps {
-                sh 'terraform destroy -auto-approve'
+                sh 'cd /var/jenkins_home/workspace/IaC/terraform && terraform destroy -auto-approve'
             }
         }
     }
