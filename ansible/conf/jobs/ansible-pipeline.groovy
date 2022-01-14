@@ -1,25 +1,15 @@
 #!groovy
 pipeline {
-
     agent any
-
-    environment {
-        ANSIBLE = 'Ansible'
-    }
-
     stages {
-        stage('Set host list') {
+        stage('mv ansible folder') {
             steps {
-
-                sh "sed -i 's/AWS_HOST/${params.AWS_HOST}/g' ${params.ANSIBLE_PATH}/hosts "
-
+                sh 'cp -r /ansible-files/* .'
             }
         }
-        stage('Set AWS IP address in api url') {
+        stage('ansible launch') {
             steps {
-                script {
-                    sh "sed -i 's/AWS_HOST/${params.AWS_HOST}/g' ${params.ANSIBLE_PATH}/monitor-playbook.yml "
-                }
+                sh 'ansible-playbook -i inventory.ini --user deploy playbook_install_apache.yml'
             }
         }
     }
